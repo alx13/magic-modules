@@ -14,7 +14,7 @@
 --- !ruby/object:Api::Resource
 name: 'TagKey'
 base_url: tagKeys
-self_link: 'tagKeys/{{name}}'
+self_link: 'tagKeys/{{tag_key_id}}'
 update_verb: :PATCH
 update_mask: true
 description: A TagKey, used to group a set of TagValues.
@@ -29,8 +29,8 @@ iam_policy: !ruby/object:Api::Resource::IamPolicy
 autogen_async: true
 exclude_validator: true
 mutex: tagKeys/{{parent}}
-id_format: 'tagKeys/{{name}}'
-import_format: ['tagKeys/{{name}}', '{{name}}']
+id_format: 'tagKeys/{{tag_key_id}}'
+import_format: ['tagKeys/{{tag_key_id}}', '{{tag_key_id}}']
 examples:
   - !ruby/object:Provider::Terraform::Examples
     name: 'tag_key_basic'
